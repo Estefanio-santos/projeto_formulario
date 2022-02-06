@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Cadastro</title>
+    <style>
+        body{
+            width: 100%;
+            font-family: sans-serif;
+        }
+        #cadastro {
+            margin: 0 auto 0 auto;
+            padding: 25;
+            width: 25%;
+        }
+        #cadastro h1 {
+            margin-left: 25%;
+        }
+        #btnCadastrar {
+            width: 100px;
+            margin-left: 25%;
+        }
+    </style>
+</head>
+<body>
+<div id="cadastro">
+    <h1>Cadastro</h1>
+    <form name="form-cadastro" action="#">
+        <b>Nome:</b> <input type="text" placeholder="Nome" id="nome"><br/><br/>
+        <b>CPF:</b> <input type="text" placeholder="CPF" id="cpf"><br/><br/>
+        <b>RG:</b> <input type="text" placeholder="RG" id="rg"><br/><br/>
+        <b>Sexo:</b>
+        <select name="sexo" id="sexo">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select><br/><br/>
+        <b>Endereço:</b> <input type="text" placeholder="Endereço" id="endereco"><br/><br/>
+        <b>Número:</b> <input type="number" placeholder="Número" id="numero"><br/><br/>
+        <b>Bairro:</b> <input type="text" placeholder="Bairro" id="bairro"><br/><br/>
+        <b>Cidade:</b> <input type="text" placeholder="Cidade" id="cidade"><br/><br/>
+        <b>Estado:</b> <input type="text" placeholder="Estado" id="estado"><br/><br/>
+        <b>CEP:</b> <input type="number" placeholder="CEP" id="cep"><br/><br/>
+        <b>Telefone Fixo:</b> <input type="tel" placeholder="Telefone Fixo" id="fixo"><br/><br/>
+        <b>Telefone Celular:</b> <input type="tel" placeholder="Telefone Celular" id="cel"><br/><br/>
+        <input type="submit" value="Cadastrar" id="btnCadastrar"  onclick="validar();">
+    </form>
+</div>
+<script>
+        function validar(){
+            if(document.getElementById("nome").value == ""){
+                alert("Nome obrigatório!");
+            } else if(document.getElementById("cpf").value == ""){
+                alert("CPF obrigatório!");
+             } else if(document.getElementById("endereco").value == ""){
+                alert("Endereço obrigatório!");
+             } else if(document.getElementById("numero").value == ""){
+                alert("Número obrigatório!");
+             } else if(document.getElementById("cel").value == ""){
+                alert("Telefone Celular obrigatório!");
+             } else {
+                exibir();
+             }
+        }
+        function exibir(){
+            alert("Cadastro realizado com sucesso!");
+            document.write("<div style=\"font-family: sans-serif; width: 25%; margin: 0 auto 0 auto; padding: 25;\"><h1 style=\"margin-left: 25%;\">Seus dados</h1><br /><b>Nome:</b> "+'<i>'+document.getElementById("nome").value+'</i>'+'<br /><br />'
+            +"<b>CPF:</b> "+'<i>'+document.getElementById("cpf").value+'</i>'+'<br /><br />'
+            +"<b>RG:</b> "+'<i>'+document.getElementById("rg").value+'</i>'+'<br /><br />'
+            +"<b>Sexo:</b> "+'<i>'+document.getElementById("sexo").value+'</i>'+'<br /><br />'
+            +"<b>Endereco:</b> "+'<i>'+document.getElementById("endereco").value+'</i>'+'<br /><br />'
+            +"<b>Número:</b> "+'<i>'+document.getElementById("numero").value+'</i>'+'<br /><br />'
+            +"<b>Bairro:</b> "+'<i>'+document.getElementById("bairro").value+'</i>'+'<br /><br />'
+            +"<b>Cidade:</b> "+'<i>'+document.getElementById("cidade").value+'</i>'+'<br /><br />'
+            +"<b>Estado:</b> "+'<i>'+document.getElementById("estado").value+'</i>'+'<br /><br />'
+            +"<b>CEP:</b> "+'<i>'+document.getElementById("cep").value+'</i>'+'<br /><br />'
+            +"<b>Telefone Fixo:</b> "+'<i>'+document.getElementById("fixo").value+'</i>'+'<br /><br />'
+            +"<b>Telefone Celular:</b> "+'<i>'+document.getElementById("cel").value+'</i>'
+            +'<br /><br /><input type=\"submit\" value=\"Sair\" style=\"margin-left: 25%;\" onclick=\"reloadpage();\"></span></div>');
+        }
+        function reloadpage(){
+            window.location="index.html";
+        }
+
+</script>
+</body>
+</html>
